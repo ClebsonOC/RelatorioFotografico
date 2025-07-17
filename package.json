@@ -1,0 +1,40 @@
+{
+  "name": "gerador-relatorio-fotografico",
+  "version": "2.0.0",
+  "description": "Gera relatórios fotográficos a partir de planilhas e imagens.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "Clebson de Oliveira Correia | oliveiraclebson007@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.2.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.Clebson.geradorrelatorio",
+    "productName": "Gerador de Relatórios",
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "src/python",
+        "to": "python"
+      },
+      {
+        "from": "vendor/python-portable",
+        "to": "python-portable"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "src/public/icon.ico"
+    }
+  }
+}

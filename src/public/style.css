@@ -1,0 +1,97 @@
+/* public/style.css */
+
+/* Adicionando a fonte Inter do Google Fonts para um visual mais moderno */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilo para os botões de seleção de arquivo */
+.file-input-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(31, 41, 55, 0.5); /* gray-800 com transparência */
+    color: white;
+    border-radius: 0.75rem; /* cantos mais arredondados */
+    border: 2px dashed #4b5563; /* gray-600 */
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    text-align: center;
+    height: 100%;
+}
+
+.file-input-label:hover {
+    background-color: rgba(55, 65, 81, 0.7); /* gray-700 com transparência */
+    border-color: #3b82f6; /* blue-500 */
+}
+
+/* Esconde o input de arquivo padrão */
+input[type="file"] {
+    display: none;
+}
+
+/* Animação do loader */
+#loader {
+    border: 5px solid #4b5563; /* gray-600 */
+    border-top: 5px solid #3b82f6; /* blue-500 */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilos para a seção de resultado (sucesso e erro) */
+#result-section.success {
+    background: linear-gradient(to top right, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2));
+    border: 1px solid #10b981; /* border-green-500 */
+}
+
+#result-section.error {
+    background: linear-gradient(to top right, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.2));
+    border: 1px solid #ef4444; /* border-red-500 */
+}
+
+#result-section.success #result-title {
+    color: #6ee7b7; /* text-green-300 */
+}
+
+#result-section.error #result-title {
+    color: #fca5a5; /* text-red-300 */
+}
+
+#result-section.success #result-message {
+    color: #a7f3d0; /* text-green-200 */
+}
+
+#result-section.error #result-message {
+    color: #fecaca; /* text-red-200 */
+}
+
+/* Scrollbar customizada para a área de log */
+#log-output::-webkit-scrollbar {
+  width: 8px;
+}
+
+#log-output::-webkit-scrollbar-track {
+  background: #1f2937; /* gray-800 */
+  border-radius: 10px;
+}
+
+#log-output::-webkit-scrollbar-thumb {
+  background-color: #4b5563; /* gray-600 */
+  border-radius: 10px;
+  border: 2px solid #1f2937; /* gray-800 */
+}
+
+#log-output::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280; /* gray-500 */
+}
